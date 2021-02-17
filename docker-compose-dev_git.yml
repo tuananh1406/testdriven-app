@@ -5,8 +5,6 @@ services:
         build:
             context: ./services/users
             dockerfile: Dockerfile-dev
-        volumes:
-            - '/services/users:/usr/src/app'
         environment:
             - FLASK_DEBUG=1
             - APP_SETTINGS=project.config.DevelopmentConfig
