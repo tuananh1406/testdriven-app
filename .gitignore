@@ -3,3 +3,4 @@ htmlcov
 aws
 *.swp
 .gitignore
+__pycache__
