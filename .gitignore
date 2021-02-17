@@ -2,3 +2,4 @@ htmlcov
 .env
 aws
 *.swp
+.gitignore
