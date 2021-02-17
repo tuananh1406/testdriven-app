@@ -2,4 +2,5 @@
 # Dừng máy ảo
 docker-machine stop testdriven-dev
 # Thiết lập tùy chọn chia sẻ cho thư mục
-VBoxManage sharedfolder add testdriven-dev --name user --hostpath ./ --automount
+VBoxManage sharedfolder add testdriven-dev --name services --hostpath ./services --automount
+docker-machine start testdriven-dev
