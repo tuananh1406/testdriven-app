@@ -16,7 +16,7 @@ before_script:
 
 script:
     - docker-compose -f docker-compose-dev_git.yml run users python manage.py test
-    - docker-compose -f docker-compose-dev_git.yml run users flake8 project
+    # - docker-compose -f docker-compose-dev_git.yml run users flake8 project
 
 after_script:
     - docker-compose -f docker-compose-dev_git.yml down
