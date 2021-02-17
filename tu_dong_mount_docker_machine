@@ -1,0 +1,5 @@
+# Tự động gắn thư mục vào docker-machine
+# Dừng máy ảo
+docker-machine stop testdriven-dev
+# Thiết lập tùy chọn chia sẻ cho thư mục
+VBoxManage sharedfolder add testdriven-dev --name user --hostpath ./ --automount

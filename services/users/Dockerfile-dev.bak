@@ -1,0 +1,17 @@
+FROM python:3.8
+
+# Thiết lập thư mục chính
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Thêm các requirements
+COPY ./requirements.txt /usr/src/app/requirements.txt
+
+# Cài đặt các thư viện bắt buộc
+RUN pip install -r requirements.txt
+
+# Thêm ứng dụng
+COPY . /usr/src/app/
+RUN ls .
+
+# test

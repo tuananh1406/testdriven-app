@@ -1,0 +1,5 @@
+Pipfile*
+.dockerignore
+Dockerfile-dev
+Dockerfile-prod
+htmlcov
