@@ -4,3 +4,4 @@ aws
 *.swp
 .gitignore
 __pycache__
+__snapshots__
