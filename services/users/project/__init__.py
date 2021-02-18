@@ -4,6 +4,7 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_debugtoolbar import DebugToolbarExtension
+from flask_cors import CORS
 
 
 # Khởi tạo cơ sở dữ liệu
@@ -13,6 +14,9 @@ toolbar = DebugToolbarExtension()
 def create_app(script_info=None):
     # Khởi tạo ứng dụng
     app = Flask(__name__)
+
+    # Kích hoạt CORS
+    CORS(app)
 
     # Cài đặt thiết lập
     app_settings = os.getenv('APP_SETTINGS')
