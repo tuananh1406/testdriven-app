@@ -5,3 +5,4 @@ aws
 .gitignore
 __pycache__
 __snapshots__
+tags
