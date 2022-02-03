@@ -36,3 +36,13 @@ services:
            - 80:80
        depends_on:
            - users
+
+    client:
+        container_name: client
+        build:
+            context: ./services/client
+            dockerfile: Dockerfile-dev
+        volumes:
+            - './services/client:/usr/src/app'
+        ports:
+          - 3000:3000

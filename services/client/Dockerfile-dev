@@ -1,0 +1,25 @@
+FROM node:14.19-buster
+
+# Cài đặt các gói bắt buộc cho môi trường
+RUN apt-get update -y\
+    && apt-get install -y --no-install-recommends npm\
+    && apt-get clean
+
+# set working directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Cài đặt các gói cần thiết
+RUN npm install create-react-app@1.5.1 --global
+RUN rm -rf node_modules package-lock.json
+RUN create-react-app .
+RUN npm install axios --save
+RUN npm install --save-dev enzyme enzyme-adapter-react-16
+RUN npm install react-scripts --global
+
+# add app
+COPY . /usr/src/app
+
+# run server
+RUN npm install
+CMD ["npm", "start"]
