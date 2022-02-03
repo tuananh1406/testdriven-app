@@ -6,3 +6,5 @@ aws
 __pycache__
 __snapshots__
 tags
+node_modules
+package-lock.json
