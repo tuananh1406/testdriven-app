@@ -21,6 +21,7 @@ COV.start()
 app = create_app()
 cli = FlaskGroup(create_app=create_app)
 
+
 @cli.command()
 def recreate_db():
     """
@@ -29,6 +30,7 @@ def recreate_db():
     db.drop_all()
     db.create_all()
     db.session.commit()
+
 
 @cli.command()
 def test():
@@ -42,6 +44,7 @@ def test():
         return 0
     return 1
 
+
 @cli.command()
 def seed_db():
     """
@@ -50,6 +53,7 @@ def seed_db():
     db.session.add(User(username='michael', email='michael@email.com'))
     db.session.add(User(username='somebody', email='somebody@email.com'))
     db.session.commit()
+
 
 @cli.command()
 def cov():
@@ -67,6 +71,7 @@ def cov():
         COV.erase()
         return 0
     return 1
+
 
 if __name__ == '__main__':
     cli()
