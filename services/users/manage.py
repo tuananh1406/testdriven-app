@@ -9,13 +9,13 @@ from project.api.models import User
 
 
 COV = coverage.coverage(
-        branch=True,
-        include='project/*',
-        omit=[
-            'project/tests/*',
-            'project/config.py',
-            ],
-    )
+    branch=True,
+    include='project/*',
+    omit=[
+        'project/tests/*',
+        'project/config.py',
+    ],
+)
 COV.start()
 
 app = create_app()
@@ -36,9 +36,9 @@ def recreate_db():
 def test():
     """Chạy các trường hợp kiểm thử"""
     tests = unittest.TestLoader().discover(
-            'project/tests',
-            pattern='test*.py',
-            )
+        'project/tests',
+        pattern='test*.py',
+    )
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         return 0
